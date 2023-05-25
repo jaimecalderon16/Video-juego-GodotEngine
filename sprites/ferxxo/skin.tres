@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://difukacgos8bo"]
+
+[ext_resource type="Texture2D" uid="uid://ctj0u4ec10eyj" path="res://sprites/ferxxo/ferxxo_espalda.png" id="1_f4f8y"]
+[ext_resource type="Texture2D" uid="uid://ct5njuwvtm4q7" path="res://sprites/ferxxo/ferxxo_frente.png" id="2_41ujs"]
+[ext_resource type="Texture2D" uid="uid://bw5y8526khdfs" path="res://sprites/ferxxo/ferxxo_lado.png" id="3_mflcg"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f4f8y")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_41ujs")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mflcg")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}]

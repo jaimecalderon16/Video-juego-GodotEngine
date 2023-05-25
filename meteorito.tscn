@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2lcfd15tgvu7"]
+
+[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_hq4w4"]
+[ext_resource type="Texture2D" uid="uid://ck8kruq5dnsdk" path="res://sprites/meteoritos/asteroide-1.png" id="2_r53pa"]
+[ext_resource type="Texture2D" uid="uid://c2pq5w5v1dyjc" path="res://sprites/meteoritos/asteroide-4.png" id="3_a822i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixy7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r53pa")
+}],
+"loop": true,
+"name": &"grande",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a822i")
+}],
+"loop": true,
+"name": &"pequeño",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_387nd"]
+radius = 26.3059
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(282, 205)
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_hq4w4")
+velocidad_min = 150
+velocidad_max = 250
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.318338, 0.3194)
+sprite_frames = SubResource("SpriteFrames_ixy7j")
+animation = &"pequeño"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_387nd")
+
+[node name="visivility" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="visivility" to="." method="_on_visivility_screen_exited"]

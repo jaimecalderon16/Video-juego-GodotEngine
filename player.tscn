@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bicuowvglvwee"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_tjgnn"]
+[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="3_sfiuf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l0m2"]
+radius = 38.0
+height = 154.0
+
+[node name="player" type="Area2D"]
+position = Vector2(216, 385)
+script = ExtResource("1_tjgnn")
+Velocidad = 400
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999939, 0)
+scale = Vector2(0.235, 0.235)
+animation = &""
+speed_scale = 2.0
+script = ExtResource("3_sfiuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_6l0m2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

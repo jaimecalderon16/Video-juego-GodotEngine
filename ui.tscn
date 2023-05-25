@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://20imrks2r3vf"]
+
+[ext_resource type="PackedScene" uid="uid://bicuowvglvwee" path="res://player.tscn" id="1_0bmja"]
+[ext_resource type="Script" path="res://ui.gd" id="1_5j8uc"]
+[ext_resource type="PackedScene" uid="uid://dcb65ev6hw402" path="res://interfaz.tscn" id="3_opkk1"]
+[ext_resource type="Texture2D" uid="uid://eb8uxsg82m5c" path="res://sprites/space fondo tamaño menor.png" id="4_st0ji"]
+[ext_resource type="AudioStream" uid="uid://dv72wrqfato35" path="res://sonidos/gameOver.wav" id="5_q4whx"]
+[ext_resource type="AudioStream" uid="uid://diccbcmccsny3" path="res://sonidos/FondoMelodia1.ogg" id="6_41u0c"]
+[ext_resource type="PackedScene" uid="uid://dt0onul26iumi" path="res://control.tscn" id="7_hwwrr"]
+
+[sub_resource type="Curve2D" id="Curve2D_571eh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -1, 0, 0, 0, 0, 639, -1, 0, 0, 0, 0, 639, 900, 0, 0, 0, 0, 2, 898, 0, 0, 0, 0, 1, -1, 0, 0, 0, 0, 1, -2)
+}
+point_count = 6
+
+[node name="UI" type="Node"]
+script = ExtResource("1_5j8uc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = -144.0
+offset_right = 644.0
+offset_bottom = 1120.0
+texture = ExtResource("4_st0ji")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="player" parent="." instance=ExtResource("1_0bmja")]
+position = Vector2(320, 454)
+
+[node name="InicioTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="RocaTimer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="PositionDeInicio" type="Marker2D" parent="."]
+position = Vector2(320, 450)
+
+[node name="camino" type="Path2D" parent="."]
+curve = SubResource("Curve2D_571eh")
+
+[node name="RocaPosicion" type="PathFollow2D" parent="camino"]
+position = Vector2(1, -1)
+
+[node name="Interfaz" parent="." instance=ExtResource("3_opkk1")]
+
+[node name="AudioGmeOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q4whx")
+volume_db = 7.0
+
+[node name="AudioFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_41u0c")
+volume_db = 2.0
+
+[node name="Control" parent="." instance=ExtResource("7_hwwrr")]
+visible = false
+
+[connection signal="señalGolpe" from="player" to="." method="game_over"]
+[connection signal="timeout" from="InicioTimer" to="." method="_on_inicio_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="RocaTimer" to="." method="_on_roca_timer_timeout"]
+[connection signal="iniciar_juego" from="Interfaz" to="." method="nuevo_juego"]

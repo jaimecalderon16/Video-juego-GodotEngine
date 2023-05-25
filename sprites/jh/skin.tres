@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bhtpr0qsadg5j"]
+
+[ext_resource type="Texture2D" uid="uid://mk30k8k68elq" path="res://sprites/jh/jhEspalda.png" id="1_6f4xg"]
+[ext_resource type="Texture2D" uid="uid://7rvjy48oyw6v" path="res://sprites/jh/JhFrente.png" id="2_amtkq"]
+[ext_resource type="Texture2D" uid="uid://e6usovmcjfcw" path="res://sprites/jh/jhLado.png" id="3_jk2fj"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6f4xg")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_amtkq")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jk2fj")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://6wfl8qff46wq"]
+
+[ext_resource type="Script" path="res://pantalla_inicio.gd" id="1_mbap5"]
+[ext_resource type="Texture2D" uid="uid://dgph0g2tcq3t2" path="res://GUI/Portada.png" id="2_26upx"]
+[ext_resource type="AudioStream" uid="uid://ogsetarllw5m" path="res://sonidos/wow.ogg" id="2_i8d8c"]
+
+[node name="pantallaInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbap5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_26upx")
+
+[node name="wowSonido" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i8d8c")
+volume_db = 3.796
+
+[node name="TimerLLamadamenu" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer2s" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TimerLLamadamenu" to="." method="_on_timer_l_lamadamenu_timeout"]
+[connection signal="timeout" from="Timer2s" to="." method="_on_timer_2s_timeout"]

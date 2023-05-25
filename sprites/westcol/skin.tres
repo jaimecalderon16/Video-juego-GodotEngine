@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dcw3xdqvgcmy2"]
+
+[ext_resource type="Texture2D" uid="uid://bhhq37ofirn13" path="res://sprites/westcol/westcol_Espalda.png" id="1_ix1fs"]
+[ext_resource type="Texture2D" uid="uid://dhqp5rw5jgpqx" path="res://sprites/westcol/westcol_Frente.png" id="2_0kom6"]
+[ext_resource type="Texture2D" uid="uid://cdcnte7o3lvsu" path="res://sprites/westcol/westcol_Lado.png" id="3_8ggtx"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ix1fs")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0kom6")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ggtx")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}]

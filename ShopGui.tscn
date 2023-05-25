@@ -1,0 +1,186 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3ynavagcu3h6"]
+
+[ext_resource type="Script" path="res://ShopGui.gd" id="1_dygdb"]
+[ext_resource type="Texture2D" uid="uid://ckerguirym4a7" path="res://GUI/ShopBackground.png" id="2_1m3p6"]
+[ext_resource type="Texture2D" uid="uid://7vet3tdm6cmu" path="res://GUI/atras.png" id="3_al0d2"]
+[ext_resource type="Texture2D" uid="uid://bbitqwe7bev7" path="res://GUI/coins.png" id="4_s5p3s"]
+[ext_resource type="FontFile" uid="uid://h7ihuos2fc3t" path="res://Fuentes/Anja Eliane.ttf" id="5_erj5i"]
+[ext_resource type="Texture2D" uid="uid://bc15opnxywrpm" path="res://sprites/ferxxo/Portada.png" id="6_j2mxt"]
+[ext_resource type="Texture2D" uid="uid://do8w2bwlu7cqp" path="res://GUI/Buttons/BuyBoton.png" id="6_ty8xr"]
+[ext_resource type="Texture2D" uid="uid://bxv8uqxn6sb7l" path="res://GUI/pressed/buyPresed.png" id="7_2yvlb"]
+[ext_resource type="Texture2D" uid="uid://d01rlcf1st1xa" path="res://GUI/coinIcon.png" id="8_nm3fw"]
+[ext_resource type="Texture2D" uid="uid://dr4i5rikjdbk" path="res://GUI/Buttons/buyLeft.png" id="10_nbv3n"]
+[ext_resource type="Texture2D" uid="uid://c7w04bdxrpx6b" path="res://GUI/pressed/buyLeftPresed.png" id="11_8nier"]
+[ext_resource type="Texture2D" uid="uid://ckaor1y864d2h" path="res://GUI/Buttons/flechaRight.png" id="12_qr4x0"]
+[ext_resource type="Texture2D" uid="uid://d33ljstk4cfvr" path="res://GUI/pressed/flechaRightPresed.png" id="13_t5dd2"]
+
+[node name="ShopGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dygdb")
+
+[node name="BacgroundShop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -154.0
+offset_right = 674.0
+offset_bottom = 1042.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1m3p6")
+
+[node name="ButtonAtras" type="Button" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 401.0
+offset_bottom = 139.0
+scale = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_al0d2")
+flat = true
+
+[node name="TextureCoinsRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 394.0
+offset_top = -2.0
+offset_right = 631.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_s5p3s")
+metadata/_edit_group_ = true
+
+[node name="coins" type="Label" parent="TextureCoinsRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -64.5
+offset_right = -39.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_erj5i")
+theme_override_font_sizes/font_size = 42
+text = "9999"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ContainerSkins" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 346.0
+offset_right = 484.0
+offset_bottom = 659.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 7
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="nameSkin" type="Label" parent="ContainerSkins"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.929412, 0, 1)
+theme_override_colors/font_outline_color = Color(0.913725, 0.305882, 0.105882, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("5_erj5i")
+theme_override_font_sizes/font_size = 39
+text = "ferxxo"
+horizontal_alignment = 1
+
+[node name="ImageSkin" type="TextureRect" parent="ContainerSkins"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_j2mxt")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerSkins"]
+y_sort_enabled = true
+layout_mode = 2
+theme_override_constants/margin_top = 7
+
+[node name="ContainerPrices" type="HBoxContainer" parent="ContainerSkins"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 5
+
+[node name="IconCoin" type="TextureRect" parent="ContainerSkins/ContainerPrices"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_nm3fw")
+expand_mode = 2
+flip_h = true
+
+[node name="PriceSkin" type="Label" parent="ContainerSkins/ContainerPrices"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.137255, 0.262745, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_erj5i")
+theme_override_font_sizes/font_size = 28
+text = "1500"
+vertical_alignment = 2
+
+[node name="ButtonBuy" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 690.0
+offset_right = 498.0
+offset_bottom = 782.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_ty8xr")
+texture_hover = ExtResource("7_2yvlb")
+
+[node name="ButtonLeft" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = 479.0
+offset_right = 107.0
+offset_bottom = 522.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_nbv3n")
+texture_hover = ExtResource("11_8nier")
+
+[node name="ButtonRigth" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 542.0
+offset_top = 485.0
+offset_right = 579.0
+offset_bottom = 528.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_qr4x0")
+texture_hover = ExtResource("13_t5dd2")
+
+[connection signal="pressed" from="ButtonAtras" to="." method="_on_button_atras_pressed"]
+[connection signal="pressed" from="ButtonBuy" to="." method="_on_button_buy_pressed"]
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="ButtonRigth" to="." method="_on_button_rigth_pressed"]

@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcb65ev6hw402"]
+
+[ext_resource type="Script" path="res://interfaz.gd" id="1_3wyj3"]
+[ext_resource type="FontFile" uid="uid://cnv24hkdwxiyr" path="res://Fuentes/Potato_sans-Bold.otf" id="2_fekxd"]
+[ext_resource type="FontFile" uid="uid://bpav08127pfpi" path="res://Fuentes/Space kids.otf" id="3_7a0mr"]
+[ext_resource type="FontFile" uid="uid://bvl6bgl0je6dm" path="res://Fuentes/MAGNETOB.TTF" id="4_8oo3c"]
+[ext_resource type="AudioStream" uid="uid://ds2jc2qlnnjf0" path="res://sonidos/clickSonido.wav" id="5_jla5r"]
+[ext_resource type="AudioStream" uid="uid://y5wk87vw3k7i" path="res://sonidos/click_thow.wav" id="6_1mdn0"]
+
+[node name="Interfaz" type="CanvasLayer"]
+script = ExtResource("1_3wyj3")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_right = 49.5
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_fekxd")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="."]
+clip_contents = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -362.0
+offset_right = 56.0
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.780392, 1)
+theme_override_colors/font_hover_color = Color(1, 0.545098, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("3_7a0mr")
+theme_override_font_sizes/font_size = 60
+text = "Play"
+flat = true
+
+[node name="ButtonShop" type="Button" parent="."]
+clip_contents = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -281.0
+offset_right = 55.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.780392, 1)
+theme_override_colors/font_hover_color = Color(0, 0.721569, 0.827451, 1)
+theme_override_fonts/font = ExtResource("3_7a0mr")
+theme_override_font_sizes/font_size = 60
+text = "Shop"
+flat = true
+
+[node name="ButtonExit" type="Button" parent="."]
+clip_contents = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -136.0
+offset_right = 50.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.780392, 1)
+theme_override_colors/font_hover_color = Color(0.882353, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7a0mr")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+flat = true
+
+[node name="ButtonCredits" type="Button" parent="."]
+clip_contents = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -204.0
+offset_right = 83.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.780392, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.670588, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("3_7a0mr")
+theme_override_font_sizes/font_size = 60
+text = "Credits"
+flat = true
+icon_alignment = 1
+
+[node name="title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -114.0
+offset_right = 243.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.913725, 0.968627, 0.886275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 17
+theme_override_fonts/font = ExtResource("4_8oo3c")
+theme_override_font_sizes/font_size = 80
+text = "Proyecto X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MensajeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jla5r")
+volume_db = -5.0
+
+[node name="AudioClickTwo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1mdn0")
+autoplay = true
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonShop" to="." method="_on_button_shop_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="MensajeTimer" to="." method="_on_mensaje_timer_timeout"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi7vg42fhmtwj"]
+
+[ext_resource type="Texture2D" uid="uid://cg0sntn7uebis" path="res://GUI/developersFondo.jpg" id="1_ysn1r"]
+[ext_resource type="FontFile" uid="uid://bpav08127pfpi" path="res://Fuentes/Space kids.otf" id="2_sjjod"]
+[ext_resource type="FontFile" uid="uid://cnv24hkdwxiyr" path="res://Fuentes/Potato_sans-Bold.otf" id="3_jllis"]
+[ext_resource type="Texture2D" uid="uid://c8a06ejtr35gu" path="res://GUI/mafiax4xTipografia_Mesa de trabajo 1.png" id="4_yrhmo"]
+
+[node name="BoxContainer" type="BoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ysn1r")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.764706, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 30
+text = "Jaime Andres Calderon"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 22
+text = "Programador Y diseñador"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.764706, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 28
+text = "Lino Bernal Sanchez"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 21
+text = "Programador"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.764706, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 26
+text = "Manuel Ramirez"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 21
+text = "Programador"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.764706, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 24
+text = "Cristian Cardenas"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sjjod")
+theme_override_font_sizes/font_size = 20
+text = "Programador
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.341176, 0.2, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_jllis")
+theme_override_font_sizes/font_size = 55
+text = "Developers"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MafiaX4X" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_yrhmo")

@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://b6j1m7ff7q78s"]
+
+[ext_resource type="Texture2D" uid="uid://1e8vgr6fhhvd" path="res://sprites/astronauta/espalda-1.png" id="1_1xslu"]
+[ext_resource type="Texture2D" uid="uid://caymq381gmsbd" path="res://sprites/astronauta/espalda-2.png" id="2_1cs1e"]
+[ext_resource type="Texture2D" uid="uid://8udpaoo41bc3" path="res://sprites/astronauta/espalda-3.png" id="3_6elu5"]
+[ext_resource type="Texture2D" uid="uid://dn4p6ibsnmunn" path="res://sprites/astronauta/frente-1.png" id="4_8jgrx"]
+[ext_resource type="Texture2D" uid="uid://c1v444l18udfn" path="res://sprites/astronauta/frente-3.png" id="5_wgvxc"]
+[ext_resource type="Texture2D" uid="uid://rttq245bytxu" path="res://sprites/astronauta/frente-2.png" id="6_kqq5j"]
+[ext_resource type="Texture2D" uid="uid://bmxemwi4etog2" path="res://sprites/astronauta/lado-1.png" id="7_rx5b2"]
+[ext_resource type="Texture2D" uid="uid://b0sca0rex6s3c" path="res://sprites/astronauta/lado-2.png" id="8_jnxhs"]
+[ext_resource type="Texture2D" uid="uid://bw1etyvkdcjrf" path="res://sprites/astronauta/lado-3.png" id="9_7txsi"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1xslu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1cs1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6elu5")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8jgrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wgvxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kqq5j")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rx5b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jnxhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7txsi")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}]
